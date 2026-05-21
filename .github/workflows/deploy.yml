@@ -1,0 +1,77 @@
+name: DevOps Monitoring Dashboard CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to AWS EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          HOST: ${{ secrets.EC2_HOST }}
+          USER: ${{ secrets.EC2_USERNAME }}
+        run: |
+          # 1. Setup SSH connection details
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          
+          # 2. SSH into instance and execute deployment script
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $USER@$HOST << 'EOF'
+            set -e
+            echo "Successfully connected to EC2 instance. Starting deployment..."
+            
+            # Go to deployment directory
+            cd /home/ubuntu/devops-dashboard
+            
+            # Check if Git repository is already initialized on host
+            if [ -d ".git" ]; then
+              echo "Pulling latest code changes..."
+              git fetch --all
+              git reset --hard origin/main
+            else
+              echo "Cloning repository for the first time..."
+              # Fallback standard clone. 
+              # NOTE: Since the repository is public or deployed via deploy keys, standard clone is used.
+              # Alternatively, if SSH checkout on host is needed, this clone command can be adjusted.
+              git clone https://github.com/${{ github.repository }}.git .
+            fi
+            
+            # Generate deployment.json dynamically containing build/deploy metadata
+            echo "Writing deployment metadata..."
+            cat <<DEPLOY_EOF > backend/deployment.json
+            {
+              "status": "active",
+              "environment": "production",
+              "last_deployment": "$(date -u +'%Y-%m-%d %H:%M:%S UTC')",
+              "commit_hash": "${{ github.sha }}",
+              "commit_message": "$(git log -1 --pretty=%B | tr -d '\n\r\"' | cut -c1-60)",
+              "branch": "${{ github.ref_name }}",
+              "author": "${{ github.actor }}"
+            }
+            DEPLOY_EOF
+            
+            # Ensure proper folder ownership
+            chown -R ubuntu:ubuntu /home/ubuntu/devops-dashboard
+            
+            # 3. Restart Docker containers
+            echo "Stopping old containers..."
+            docker compose down --remove-orphans || true
+            
+            echo "Rebuilding and launching containers in background..."
+            docker compose up --build -d
+            
+            # Print active containers
+            docker compose ps
+            
+            echo "Deployment finished successfully!"
+          EOF

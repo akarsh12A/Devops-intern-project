@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: devops_backend
+    restart: unless-stopped
+    environment:
+      - PORT=5000
+      - BACKEND_LOG_PATH=/var/log/app/backend.log
+    volumes:
+      # Mount the Docker socket from the host to monitor containers using Docker SDK
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Mount a shared logs volume to access logs on host / Nginx if needed
+      - ./logs:/var/log/app
+    networks:
+      - devops_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: devops_frontend
+    restart: unless-stopped
+    networks:
+      - devops_net
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: devops_nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - devops_net
+
+networks:
+  devops_net:
+    driver: bridge
