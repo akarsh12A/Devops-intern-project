@@ -153,3 +153,18 @@
 2026-05-22 14:32:13,771 [INFO] Containers status endpoint queried
 2026-05-22 14:32:14,388 [INFO] Deployment info endpoint queried
 2026-05-22 14:32:14,392 [INFO] Logs endpoint queried
+2026-05-22 14:33:13,889 [INFO] Health check endpoint queried
+2026-05-22 14:33:13,895 [INFO] Metrics endpoint queried
+2026-05-22 14:33:13,899 [INFO] Containers status endpoint queried
+2026-05-22 14:33:14,525 [INFO] Deployment info endpoint queried
+2026-05-22 14:33:14,529 [INFO] Logs endpoint queried
+2026-05-22 14:34:13,955 [INFO] Health check endpoint queried
+2026-05-22 14:34:13,961 [INFO] Metrics endpoint queried
+2026-05-22 14:34:13,966 [INFO] Containers status endpoint queried
+2026-05-22 14:34:14,560 [INFO] Deployment info endpoint queried
+2026-05-22 14:34:14,564 [INFO] Logs endpoint queried
+2026-05-22 14:35:14,145 [INFO] Health check endpoint queried
+2026-05-22 14:35:14,152 [INFO] Metrics endpoint queried
+2026-05-22 14:35:14,158 [INFO] Containers status endpoint queried
+2026-05-22 14:35:14,806 [INFO] Deployment info endpoint queried
+2026-05-22 14:35:14,810 [INFO] Logs endpoint queried
