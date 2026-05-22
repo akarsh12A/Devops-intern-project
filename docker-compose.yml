@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+
   backend:
     build:
       context: ./backend
@@ -10,10 +11,10 @@ services:
     environment:
       - PORT=5000
       - BACKEND_LOG_PATH=/var/log/app/backend.log
+    ports:
+      - "5000:5000"
     volumes:
-      # Mount the Docker socket from the host to monitor containers using Docker SDK
       - /var/run/docker.sock:/var/run/docker.sock
-      # Mount a shared logs volume to access logs on host / Nginx if needed
       - ./logs:/var/log/app
     networks:
       - devops_net

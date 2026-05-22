@@ -1,0 +1,364 @@
+2026-05-22 19:21:09,848 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.2:5000
+2026-05-22 19:21:09,848 [INFO] [33mPress CTRL+C to quit[0m
+2026-05-22 19:21:19,798 [INFO] 127.0.0.1 - - [22/May/2026 19:21:19] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-22 19:21:20,189 [INFO] 127.0.0.1 - - [22/May/2026 19:21:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-22 19:21:28,733 [INFO] 192.168.1.2 - - [22/May/2026 19:21:28] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-22 19:21:29,093 [INFO] 192.168.1.2 - - [22/May/2026 19:21:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-22 19:22:48,194 [INFO] Health check endpoint queried
+2026-05-22 19:22:48,194 [INFO] 127.0.0.1 - - [22/May/2026 19:22:48] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:22:48,556 [INFO] 127.0.0.1 - - [22/May/2026 19:22:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-22 19:23:11,983 [INFO] Metrics endpoint queried
+2026-05-22 19:23:11,985 [INFO] 127.0.0.1 - - [22/May/2026 19:23:11] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:09,625 [INFO] Health check endpoint queried
+2026-05-22 19:25:09,625 [INFO] 127.0.0.1 - - [22/May/2026 19:25:09] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:09,891 [INFO] Health check endpoint queried
+2026-05-22 19:25:09,891 [INFO] 127.0.0.1 - - [22/May/2026 19:25:09] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:09,932 [INFO] Metrics endpoint queried
+2026-05-22 19:25:09,932 [INFO] 127.0.0.1 - - [22/May/2026 19:25:09] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:09,932 [INFO] Metrics endpoint queried
+2026-05-22 19:25:09,938 [INFO] 127.0.0.1 - - [22/May/2026 19:25:09] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:10,258 [INFO] Containers status endpoint queried
+2026-05-22 19:25:10,718 [INFO] 127.0.0.1 - - [22/May/2026 19:25:10] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:10,719 [INFO] Containers status endpoint queried
+2026-05-22 19:25:11,022 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:11,022 [INFO] 127.0.0.1 - - [22/May/2026 19:25:11] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:11,130 [INFO] 127.0.0.1 - - [22/May/2026 19:25:11] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:11,337 [INFO] Logs endpoint queried
+2026-05-22 19:25:11,353 [INFO] 127.0.0.1 - - [22/May/2026 19:25:11] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:11,439 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:11,439 [INFO] 127.0.0.1 - - [22/May/2026 19:25:11] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:11,744 [INFO] Logs endpoint queried
+2026-05-22 19:25:11,759 [INFO] 127.0.0.1 - - [22/May/2026 19:25:11] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:14,322 [INFO] Health check endpoint queried
+2026-05-22 19:25:14,322 [INFO] 127.0.0.1 - - [22/May/2026 19:25:14] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:14,635 [INFO] Metrics endpoint queried
+2026-05-22 19:25:14,635 [INFO] 127.0.0.1 - - [22/May/2026 19:25:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:14,897 [INFO] Containers status endpoint queried
+2026-05-22 19:25:15,315 [INFO] 127.0.0.1 - - [22/May/2026 19:25:15] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:15,318 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:15,319 [INFO] 127.0.0.1 - - [22/May/2026 19:25:15] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:15,627 [INFO] Logs endpoint queried
+2026-05-22 19:25:15,641 [INFO] 127.0.0.1 - - [22/May/2026 19:25:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:19,760 [INFO] Health check endpoint queried
+2026-05-22 19:25:19,760 [INFO] 127.0.0.1 - - [22/May/2026 19:25:19] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:20,077 [INFO] Metrics endpoint queried
+2026-05-22 19:25:20,078 [INFO] 127.0.0.1 - - [22/May/2026 19:25:20] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:20,344 [INFO] Containers status endpoint queried
+2026-05-22 19:25:20,779 [INFO] 127.0.0.1 - - [22/May/2026 19:25:20] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:20,783 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:20,784 [INFO] 127.0.0.1 - - [22/May/2026 19:25:20] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:21,090 [INFO] Logs endpoint queried
+2026-05-22 19:25:21,105 [INFO] 127.0.0.1 - - [22/May/2026 19:25:21] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:24,322 [INFO] Health check endpoint queried
+2026-05-22 19:25:24,322 [INFO] 127.0.0.1 - - [22/May/2026 19:25:24] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:24,628 [INFO] Metrics endpoint queried
+2026-05-22 19:25:24,628 [INFO] 127.0.0.1 - - [22/May/2026 19:25:24] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:24,885 [INFO] Containers status endpoint queried
+2026-05-22 19:25:25,300 [INFO] 127.0.0.1 - - [22/May/2026 19:25:25] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:25,303 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:25,304 [INFO] 127.0.0.1 - - [22/May/2026 19:25:25] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:25,613 [INFO] Logs endpoint queried
+2026-05-22 19:25:25,628 [INFO] 127.0.0.1 - - [22/May/2026 19:25:25] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:29,324 [INFO] Health check endpoint queried
+2026-05-22 19:25:29,324 [INFO] 127.0.0.1 - - [22/May/2026 19:25:29] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:29,641 [INFO] Metrics endpoint queried
+2026-05-22 19:25:29,641 [INFO] 127.0.0.1 - - [22/May/2026 19:25:29] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:29,904 [INFO] Containers status endpoint queried
+2026-05-22 19:25:30,300 [INFO] 127.0.0.1 - - [22/May/2026 19:25:30] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:30,302 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:30,303 [INFO] 127.0.0.1 - - [22/May/2026 19:25:30] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:30,618 [INFO] Logs endpoint queried
+2026-05-22 19:25:30,641 [INFO] 127.0.0.1 - - [22/May/2026 19:25:30] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:34,322 [INFO] Health check endpoint queried
+2026-05-22 19:25:34,322 [INFO] 127.0.0.1 - - [22/May/2026 19:25:34] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:34,633 [INFO] Metrics endpoint queried
+2026-05-22 19:25:34,633 [INFO] 127.0.0.1 - - [22/May/2026 19:25:34] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:34,896 [INFO] Containers status endpoint queried
+2026-05-22 19:25:35,298 [INFO] 127.0.0.1 - - [22/May/2026 19:25:35] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:35,300 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:35,301 [INFO] 127.0.0.1 - - [22/May/2026 19:25:35] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:35,608 [INFO] Logs endpoint queried
+2026-05-22 19:25:35,626 [INFO] 127.0.0.1 - - [22/May/2026 19:25:35] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:39,336 [INFO] Health check endpoint queried
+2026-05-22 19:25:39,336 [INFO] 127.0.0.1 - - [22/May/2026 19:25:39] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:39,656 [INFO] Metrics endpoint queried
+2026-05-22 19:25:39,656 [INFO] 127.0.0.1 - - [22/May/2026 19:25:39] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:39,903 [INFO] Containers status endpoint queried
+2026-05-22 19:25:40,298 [INFO] 127.0.0.1 - - [22/May/2026 19:25:40] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:40,301 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:40,301 [INFO] 127.0.0.1 - - [22/May/2026 19:25:40] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:40,605 [INFO] Logs endpoint queried
+2026-05-22 19:25:40,624 [INFO] 127.0.0.1 - - [22/May/2026 19:25:40] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:44,324 [INFO] Health check endpoint queried
+2026-05-22 19:25:44,324 [INFO] 127.0.0.1 - - [22/May/2026 19:25:44] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:44,633 [INFO] Metrics endpoint queried
+2026-05-22 19:25:44,633 [INFO] 127.0.0.1 - - [22/May/2026 19:25:44] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:44,898 [INFO] Containers status endpoint queried
+2026-05-22 19:25:45,289 [INFO] 127.0.0.1 - - [22/May/2026 19:25:45] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:45,292 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:45,293 [INFO] 127.0.0.1 - - [22/May/2026 19:25:45] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:45,609 [INFO] Logs endpoint queried
+2026-05-22 19:25:45,628 [INFO] 127.0.0.1 - - [22/May/2026 19:25:45] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:49,327 [INFO] Health check endpoint queried
+2026-05-22 19:25:49,327 [INFO] 127.0.0.1 - - [22/May/2026 19:25:49] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:49,647 [INFO] Metrics endpoint queried
+2026-05-22 19:25:49,648 [INFO] 127.0.0.1 - - [22/May/2026 19:25:49] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:49,899 [INFO] Containers status endpoint queried
+2026-05-22 19:25:50,326 [INFO] 127.0.0.1 - - [22/May/2026 19:25:50] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:50,330 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:50,330 [INFO] 127.0.0.1 - - [22/May/2026 19:25:50] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:50,640 [INFO] Logs endpoint queried
+2026-05-22 19:25:50,660 [INFO] 127.0.0.1 - - [22/May/2026 19:25:50] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:54,327 [INFO] Health check endpoint queried
+2026-05-22 19:25:54,327 [INFO] 127.0.0.1 - - [22/May/2026 19:25:54] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:54,639 [INFO] Metrics endpoint queried
+2026-05-22 19:25:54,639 [INFO] 127.0.0.1 - - [22/May/2026 19:25:54] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:54,905 [INFO] Containers status endpoint queried
+2026-05-22 19:25:55,298 [INFO] 127.0.0.1 - - [22/May/2026 19:25:55] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:25:55,301 [INFO] Deployment info endpoint queried
+2026-05-22 19:25:55,302 [INFO] 127.0.0.1 - - [22/May/2026 19:25:55] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:25:55,606 [INFO] Logs endpoint queried
+2026-05-22 19:25:55,622 [INFO] 127.0.0.1 - - [22/May/2026 19:25:55] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:25:59,321 [INFO] Health check endpoint queried
+2026-05-22 19:25:59,321 [INFO] 127.0.0.1 - - [22/May/2026 19:25:59] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:25:59,628 [INFO] Metrics endpoint queried
+2026-05-22 19:25:59,629 [INFO] 127.0.0.1 - - [22/May/2026 19:25:59] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:25:59,889 [INFO] Containers status endpoint queried
+2026-05-22 19:26:00,303 [INFO] 127.0.0.1 - - [22/May/2026 19:26:00] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:00,306 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:00,306 [INFO] 127.0.0.1 - - [22/May/2026 19:26:00] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:00,613 [INFO] Logs endpoint queried
+2026-05-22 19:26:00,630 [INFO] 127.0.0.1 - - [22/May/2026 19:26:00] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:04,626 [INFO] Health check endpoint queried
+2026-05-22 19:26:04,626 [INFO] 127.0.0.1 - - [22/May/2026 19:26:04] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:04,883 [INFO] Metrics endpoint queried
+2026-05-22 19:26:04,885 [INFO] 127.0.0.1 - - [22/May/2026 19:26:04] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:04,934 [INFO] Containers status endpoint queried
+2026-05-22 19:26:05,387 [INFO] 127.0.0.1 - - [22/May/2026 19:26:05] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:05,390 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:05,390 [INFO] 127.0.0.1 - - [22/May/2026 19:26:05] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:05,697 [INFO] Logs endpoint queried
+2026-05-22 19:26:05,716 [INFO] 127.0.0.1 - - [22/May/2026 19:26:05] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:09,322 [INFO] Health check endpoint queried
+2026-05-22 19:26:09,322 [INFO] 127.0.0.1 - - [22/May/2026 19:26:09] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:09,629 [INFO] Metrics endpoint queried
+2026-05-22 19:26:09,629 [INFO] 127.0.0.1 - - [22/May/2026 19:26:09] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:09,888 [INFO] Containers status endpoint queried
+2026-05-22 19:26:10,306 [INFO] 127.0.0.1 - - [22/May/2026 19:26:10] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:10,308 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:10,309 [INFO] 127.0.0.1 - - [22/May/2026 19:26:10] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:10,613 [INFO] Logs endpoint queried
+2026-05-22 19:26:10,629 [INFO] 127.0.0.1 - - [22/May/2026 19:26:10] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:14,761 [INFO] Health check endpoint queried
+2026-05-22 19:26:14,761 [INFO] 127.0.0.1 - - [22/May/2026 19:26:14] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:15,071 [INFO] Metrics endpoint queried
+2026-05-22 19:26:15,073 [INFO] 127.0.0.1 - - [22/May/2026 19:26:15] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:15,328 [INFO] Containers status endpoint queried
+2026-05-22 19:26:15,723 [INFO] 127.0.0.1 - - [22/May/2026 19:26:15] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:15,726 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:15,727 [INFO] 127.0.0.1 - - [22/May/2026 19:26:15] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:16,035 [INFO] Logs endpoint queried
+2026-05-22 19:26:16,052 [INFO] 127.0.0.1 - - [22/May/2026 19:26:16] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:19,761 [INFO] Health check endpoint queried
+2026-05-22 19:26:19,761 [INFO] 127.0.0.1 - - [22/May/2026 19:26:19] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:20,080 [INFO] Metrics endpoint queried
+2026-05-22 19:26:20,081 [INFO] 127.0.0.1 - - [22/May/2026 19:26:20] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:20,323 [INFO] Containers status endpoint queried
+2026-05-22 19:26:20,753 [INFO] 127.0.0.1 - - [22/May/2026 19:26:20] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:20,757 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:20,758 [INFO] 127.0.0.1 - - [22/May/2026 19:26:20] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:21,064 [INFO] Logs endpoint queried
+2026-05-22 19:26:21,083 [INFO] 127.0.0.1 - - [22/May/2026 19:26:21] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:24,768 [INFO] Health check endpoint queried
+2026-05-22 19:26:24,768 [INFO] 127.0.0.1 - - [22/May/2026 19:26:24] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:25,076 [INFO] Metrics endpoint queried
+2026-05-22 19:26:25,078 [INFO] 127.0.0.1 - - [22/May/2026 19:26:25] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:25,336 [INFO] Containers status endpoint queried
+2026-05-22 19:26:25,736 [INFO] 127.0.0.1 - - [22/May/2026 19:26:25] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:25,738 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:25,739 [INFO] 127.0.0.1 - - [22/May/2026 19:26:25] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:26,051 [INFO] Logs endpoint queried
+2026-05-22 19:26:26,069 [INFO] 127.0.0.1 - - [22/May/2026 19:26:26] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:29,762 [INFO] Health check endpoint queried
+2026-05-22 19:26:29,762 [INFO] 127.0.0.1 - - [22/May/2026 19:26:29] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:30,072 [INFO] Metrics endpoint queried
+2026-05-22 19:26:30,074 [INFO] 127.0.0.1 - - [22/May/2026 19:26:30] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:30,321 [INFO] Containers status endpoint queried
+2026-05-22 19:26:30,743 [INFO] 127.0.0.1 - - [22/May/2026 19:26:30] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:30,746 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:30,747 [INFO] 127.0.0.1 - - [22/May/2026 19:26:30] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:31,054 [INFO] Logs endpoint queried
+2026-05-22 19:26:31,070 [INFO] 127.0.0.1 - - [22/May/2026 19:26:31] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:34,761 [INFO] Health check endpoint queried
+2026-05-22 19:26:34,761 [INFO] 127.0.0.1 - - [22/May/2026 19:26:34] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:35,072 [INFO] Metrics endpoint queried
+2026-05-22 19:26:35,073 [INFO] 127.0.0.1 - - [22/May/2026 19:26:35] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:35,316 [INFO] Containers status endpoint queried
+2026-05-22 19:26:35,768 [INFO] 127.0.0.1 - - [22/May/2026 19:26:35] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:35,770 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:35,772 [INFO] 127.0.0.1 - - [22/May/2026 19:26:35] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:36,078 [INFO] Logs endpoint queried
+2026-05-22 19:26:36,092 [INFO] 127.0.0.1 - - [22/May/2026 19:26:36] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:39,760 [INFO] Health check endpoint queried
+2026-05-22 19:26:39,760 [INFO] 127.0.0.1 - - [22/May/2026 19:26:39] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:40,064 [INFO] Metrics endpoint queried
+2026-05-22 19:26:40,066 [INFO] 127.0.0.1 - - [22/May/2026 19:26:40] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:40,322 [INFO] Containers status endpoint queried
+2026-05-22 19:26:40,793 [INFO] 127.0.0.1 - - [22/May/2026 19:26:40] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:40,796 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:40,797 [INFO] 127.0.0.1 - - [22/May/2026 19:26:40] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:41,106 [INFO] Logs endpoint queried
+2026-05-22 19:26:41,122 [INFO] 127.0.0.1 - - [22/May/2026 19:26:41] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:44,761 [INFO] Health check endpoint queried
+2026-05-22 19:26:44,762 [INFO] 127.0.0.1 - - [22/May/2026 19:26:44] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:45,075 [INFO] Metrics endpoint queried
+2026-05-22 19:26:45,075 [INFO] 127.0.0.1 - - [22/May/2026 19:26:45] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:45,321 [INFO] Containers status endpoint queried
+2026-05-22 19:26:45,730 [INFO] 127.0.0.1 - - [22/May/2026 19:26:45] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:45,733 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:45,733 [INFO] 127.0.0.1 - - [22/May/2026 19:26:45] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:46,039 [INFO] Logs endpoint queried
+2026-05-22 19:26:46,055 [INFO] 127.0.0.1 - - [22/May/2026 19:26:46] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:49,759 [INFO] Health check endpoint queried
+2026-05-22 19:26:49,759 [INFO] 127.0.0.1 - - [22/May/2026 19:26:49] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:50,072 [INFO] Metrics endpoint queried
+2026-05-22 19:26:50,073 [INFO] 127.0.0.1 - - [22/May/2026 19:26:50] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:50,333 [INFO] Containers status endpoint queried
+2026-05-22 19:26:50,761 [INFO] 127.0.0.1 - - [22/May/2026 19:26:50] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:50,764 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:50,764 [INFO] 127.0.0.1 - - [22/May/2026 19:26:50] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:51,068 [INFO] Logs endpoint queried
+2026-05-22 19:26:51,085 [INFO] 127.0.0.1 - - [22/May/2026 19:26:51] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:54,769 [INFO] Health check endpoint queried
+2026-05-22 19:26:54,769 [INFO] 127.0.0.1 - - [22/May/2026 19:26:54] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:26:55,078 [INFO] Metrics endpoint queried
+2026-05-22 19:26:55,080 [INFO] 127.0.0.1 - - [22/May/2026 19:26:55] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:26:55,347 [INFO] Containers status endpoint queried
+2026-05-22 19:26:55,772 [INFO] 127.0.0.1 - - [22/May/2026 19:26:55] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:26:55,776 [INFO] Deployment info endpoint queried
+2026-05-22 19:26:55,777 [INFO] 127.0.0.1 - - [22/May/2026 19:26:55] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:26:56,087 [INFO] Logs endpoint queried
+2026-05-22 19:26:56,103 [INFO] 127.0.0.1 - - [22/May/2026 19:26:56] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:26:59,760 [INFO] Health check endpoint queried
+2026-05-22 19:26:59,760 [INFO] 127.0.0.1 - - [22/May/2026 19:26:59] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:27:00,080 [INFO] Metrics endpoint queried
+2026-05-22 19:27:00,080 [INFO] 127.0.0.1 - - [22/May/2026 19:27:00] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:27:00,334 [INFO] Containers status endpoint queried
+2026-05-22 19:27:00,753 [INFO] 127.0.0.1 - - [22/May/2026 19:27:00] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:27:00,755 [INFO] Deployment info endpoint queried
+2026-05-22 19:27:00,756 [INFO] 127.0.0.1 - - [22/May/2026 19:27:00] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:27:01,065 [INFO] Logs endpoint queried
+2026-05-22 19:27:01,087 [INFO] 127.0.0.1 - - [22/May/2026 19:27:01] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:27:04,766 [INFO] Health check endpoint queried
+2026-05-22 19:27:04,766 [INFO] 127.0.0.1 - - [22/May/2026 19:27:04] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:27:05,072 [INFO] Metrics endpoint queried
+2026-05-22 19:27:05,075 [INFO] 127.0.0.1 - - [22/May/2026 19:27:05] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:27:05,336 [INFO] Containers status endpoint queried
+2026-05-22 19:27:05,782 [INFO] 127.0.0.1 - - [22/May/2026 19:27:05] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:27:05,784 [INFO] Deployment info endpoint queried
+2026-05-22 19:27:05,785 [INFO] 127.0.0.1 - - [22/May/2026 19:27:05] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:27:06,093 [INFO] Logs endpoint queried
+2026-05-22 19:27:06,121 [INFO] 127.0.0.1 - - [22/May/2026 19:27:06] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:27:13,759 [INFO] Health check endpoint queried
+2026-05-22 19:27:13,760 [INFO] 127.0.0.1 - - [22/May/2026 19:27:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:27:14,078 [INFO] Metrics endpoint queried
+2026-05-22 19:27:14,079 [INFO] 127.0.0.1 - - [22/May/2026 19:27:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:27:14,318 [INFO] Containers status endpoint queried
+2026-05-22 19:27:14,721 [INFO] 127.0.0.1 - - [22/May/2026 19:27:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:27:14,723 [INFO] Deployment info endpoint queried
+2026-05-22 19:27:14,725 [INFO] 127.0.0.1 - - [22/May/2026 19:27:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:27:15,030 [INFO] Logs endpoint queried
+2026-05-22 19:27:15,048 [INFO] 127.0.0.1 - - [22/May/2026 19:27:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:28:13,763 [INFO] Health check endpoint queried
+2026-05-22 19:28:13,763 [INFO] 127.0.0.1 - - [22/May/2026 19:28:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:28:14,074 [INFO] Metrics endpoint queried
+2026-05-22 19:28:14,074 [INFO] 127.0.0.1 - - [22/May/2026 19:28:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:28:14,329 [INFO] Containers status endpoint queried
+2026-05-22 19:28:14,742 [INFO] 127.0.0.1 - - [22/May/2026 19:28:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:28:14,745 [INFO] Deployment info endpoint queried
+2026-05-22 19:28:14,745 [INFO] 127.0.0.1 - - [22/May/2026 19:28:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:28:15,062 [INFO] Logs endpoint queried
+2026-05-22 19:28:15,082 [INFO] 127.0.0.1 - - [22/May/2026 19:28:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:29:13,774 [INFO] Health check endpoint queried
+2026-05-22 19:29:13,774 [INFO] 127.0.0.1 - - [22/May/2026 19:29:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:29:14,093 [INFO] Metrics endpoint queried
+2026-05-22 19:29:14,093 [INFO] 127.0.0.1 - - [22/May/2026 19:29:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:29:14,348 [INFO] Containers status endpoint queried
+2026-05-22 19:29:14,741 [INFO] 127.0.0.1 - - [22/May/2026 19:29:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:29:14,744 [INFO] Deployment info endpoint queried
+2026-05-22 19:29:14,745 [INFO] 127.0.0.1 - - [22/May/2026 19:29:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:29:15,049 [INFO] Logs endpoint queried
+2026-05-22 19:29:15,069 [INFO] 127.0.0.1 - - [22/May/2026 19:29:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:30:13,773 [INFO] Health check endpoint queried
+2026-05-22 19:30:13,775 [INFO] 127.0.0.1 - - [22/May/2026 19:30:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:30:14,088 [INFO] Metrics endpoint queried
+2026-05-22 19:30:14,088 [INFO] 127.0.0.1 - - [22/May/2026 19:30:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:30:14,342 [INFO] Containers status endpoint queried
+2026-05-22 19:30:14,817 [INFO] 127.0.0.1 - - [22/May/2026 19:30:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:30:14,821 [INFO] Deployment info endpoint queried
+2026-05-22 19:30:14,821 [INFO] 127.0.0.1 - - [22/May/2026 19:30:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:30:15,132 [INFO] Logs endpoint queried
+2026-05-22 19:30:15,152 [INFO] 127.0.0.1 - - [22/May/2026 19:30:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:31:13,756 [INFO] Health check endpoint queried
+2026-05-22 19:31:13,756 [INFO] 127.0.0.1 - - [22/May/2026 19:31:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:31:14,073 [INFO] Metrics endpoint queried
+2026-05-22 19:31:14,074 [INFO] 127.0.0.1 - - [22/May/2026 19:31:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:31:14,341 [INFO] Containers status endpoint queried
+2026-05-22 19:31:14,737 [INFO] 127.0.0.1 - - [22/May/2026 19:31:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:31:14,740 [INFO] Deployment info endpoint queried
+2026-05-22 19:31:14,740 [INFO] 127.0.0.1 - - [22/May/2026 19:31:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:31:15,043 [INFO] Logs endpoint queried
+2026-05-22 19:31:15,065 [INFO] 127.0.0.1 - - [22/May/2026 19:31:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:32:13,757 [INFO] Health check endpoint queried
+2026-05-22 19:32:13,757 [INFO] 127.0.0.1 - - [22/May/2026 19:32:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:32:14,070 [INFO] Metrics endpoint queried
+2026-05-22 19:32:14,071 [INFO] 127.0.0.1 - - [22/May/2026 19:32:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:32:14,336 [INFO] Containers status endpoint queried
+2026-05-22 19:32:14,746 [INFO] 127.0.0.1 - - [22/May/2026 19:32:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:32:14,748 [INFO] Deployment info endpoint queried
+2026-05-22 19:32:14,749 [INFO] 127.0.0.1 - - [22/May/2026 19:32:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:32:15,055 [INFO] Logs endpoint queried
+2026-05-22 19:32:15,075 [INFO] 127.0.0.1 - - [22/May/2026 19:32:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:33:13,760 [INFO] Health check endpoint queried
+2026-05-22 19:33:13,760 [INFO] 127.0.0.1 - - [22/May/2026 19:33:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:33:14,077 [INFO] Metrics endpoint queried
+2026-05-22 19:33:14,079 [INFO] 127.0.0.1 - - [22/May/2026 19:33:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:33:14,329 [INFO] Containers status endpoint queried
+2026-05-22 19:33:14,730 [INFO] 127.0.0.1 - - [22/May/2026 19:33:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:33:14,733 [INFO] Deployment info endpoint queried
+2026-05-22 19:33:14,733 [INFO] 127.0.0.1 - - [22/May/2026 19:33:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:33:15,044 [INFO] Logs endpoint queried
+2026-05-22 19:33:15,068 [INFO] 127.0.0.1 - - [22/May/2026 19:33:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:34:13,765 [INFO] Health check endpoint queried
+2026-05-22 19:34:13,765 [INFO] 127.0.0.1 - - [22/May/2026 19:34:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:34:14,076 [INFO] Metrics endpoint queried
+2026-05-22 19:34:14,076 [INFO] 127.0.0.1 - - [22/May/2026 19:34:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:34:14,335 [INFO] Containers status endpoint queried
+2026-05-22 19:34:14,776 [INFO] 127.0.0.1 - - [22/May/2026 19:34:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:34:14,778 [INFO] Deployment info endpoint queried
+2026-05-22 19:34:14,779 [INFO] 127.0.0.1 - - [22/May/2026 19:34:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:34:15,089 [INFO] Logs endpoint queried
+2026-05-22 19:34:15,101 [INFO] 127.0.0.1 - - [22/May/2026 19:34:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:35:13,761 [INFO] Health check endpoint queried
+2026-05-22 19:35:13,761 [INFO] 127.0.0.1 - - [22/May/2026 19:35:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:35:14,075 [INFO] Metrics endpoint queried
+2026-05-22 19:35:14,075 [INFO] 127.0.0.1 - - [22/May/2026 19:35:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:35:14,329 [INFO] Containers status endpoint queried
+2026-05-22 19:35:14,742 [INFO] 127.0.0.1 - - [22/May/2026 19:35:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:35:14,745 [INFO] Deployment info endpoint queried
+2026-05-22 19:35:14,745 [INFO] 127.0.0.1 - - [22/May/2026 19:35:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:35:15,050 [INFO] Logs endpoint queried
+2026-05-22 19:35:15,071 [INFO] 127.0.0.1 - - [22/May/2026 19:35:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
+2026-05-22 19:36:13,767 [INFO] Health check endpoint queried
+2026-05-22 19:36:13,768 [INFO] 127.0.0.1 - - [22/May/2026 19:36:13] "GET /api/health HTTP/1.1" 200 -
+2026-05-22 19:36:14,077 [INFO] Metrics endpoint queried
+2026-05-22 19:36:14,078 [INFO] 127.0.0.1 - - [22/May/2026 19:36:14] "GET /api/metrics HTTP/1.1" 200 -
+2026-05-22 19:36:14,346 [INFO] Containers status endpoint queried
+2026-05-22 19:36:14,769 [INFO] 127.0.0.1 - - [22/May/2026 19:36:14] "GET /api/containers HTTP/1.1" 200 -
+2026-05-22 19:36:14,771 [INFO] Deployment info endpoint queried
+2026-05-22 19:36:14,772 [INFO] 127.0.0.1 - - [22/May/2026 19:36:14] "GET /api/deployment HTTP/1.1" 200 -
+2026-05-22 19:36:15,077 [INFO] Logs endpoint queried
+2026-05-22 19:36:15,096 [INFO] 127.0.0.1 - - [22/May/2026 19:36:15] "GET /api/logs?limit=50 HTTP/1.1" 200 -
