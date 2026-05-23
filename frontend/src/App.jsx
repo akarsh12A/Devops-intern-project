@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Setup API URL based on environment (Vite Dev Server vs Nginx)
-const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : '';
+const API_BASE = '/api';
 
 function App() {
   const [metrics, setMetrics] = useState(null);
@@ -12,61 +12,46 @@ function App() {
   const [apiStatus, setApiStatus] = useState('connecting'); // active, warning, inactive
   const [lastUpdated, setLastUpdated] = useState(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  
+
   const terminalEndRef = useRef(null);
 
   // Function to fetch all dashboard data
   const fetchDashboardData = async (manual = false) => {
     if (manual) setIsRefreshing(true);
-    
+
     try {
       // 1. Health check to confirm API connectivity
-      const healthRes = await fetch(`${API_BASE}/api/health`);
+      const healthRes = await fetch(`${API_BASE}/health`);
       if (!healthRes.ok) throw new Error('API server down');
       const healthData = await healthRes.json();
-      
+
       // 2. Fetch system metrics
-      const metricsRes = await fetch(`${API_BASE}/api/metrics`);
+      const metricsRes = await fetch(`${API_BASE}/metrics`);
       const metricsData = await metricsRes.ok ? await metricsRes.json() : null;
-      
+
       // 3. Fetch Docker container list
-      const dockerRes = await fetch(`${API_BASE}/api/containers`);
+      const dockerRes = await fetch(`${API_BASE}/containers`);
       const dockerData = await dockerRes.ok ? await dockerRes.json() : null;
-      
+
       // 4. Fetch Deployment metadata
-      const deployRes = await fetch(`${API_BASE}/api/deployment`);
+      const deployRes = await fetch(`${API_BASE}/deployment`);
       const deployData = await deployRes.ok ? await deployRes.json() : null;
-      
+
       // 5. Fetch system logs
-      const logsRes = await fetch(`${API_BASE}/api/logs?limit=50`);
+      const logsRes = await fetch(`${API_BASE}/logs?limit=50`);
       const logsData = await logsRes.ok ? await logsRes.json() : null;
 
-      // Update state
-      if (metricsData && metricsData.status === 'success') {
-        setMetrics(metricsData);
-      }
-      
-      if (dockerData) {
-        setDocker(dockerData);
-      }
-
-      if (deployData) {
-        setDeployment(deployData);
-      }
-
-      if (logsData && logsData.logs) {
-        setLogs(logsData.logs);
-      }
-
-      setApiStatus(dockerData?.docker_daemon === 'disconnected' ? 'warning' : 'active');
+      setMetrics(metricsData);
+      setDocker(dockerData);
+      setDeployment(deployData);
+      setLogs(logsData?.logs || []);
+      setApiStatus('active');
       setLastUpdated(new Date().toLocaleTimeString());
     } catch (err) {
-      console.error('Error fetching dashboard data:', err);
+      console.error('Dashboard fetch error:', err);
       setApiStatus('inactive');
     } finally {
-      if (manual) {
-        setTimeout(() => setIsRefreshing(false), 600); // smooth feel
-      }
+      setIsRefreshing(false);
     }
   };
 
@@ -76,7 +61,7 @@ function App() {
     const interval = setInterval(() => {
       fetchDashboardData();
     }, 5000); // poll every 5 seconds
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -94,12 +79,12 @@ function App() {
     const h = Math.floor((seconds % (3600 * 24)) / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = Math.floor(seconds % 60);
-    
+
     const dDisplay = d > 0 ? `${d}d ` : '';
     const hDisplay = h > 0 ? `${h}h ` : '';
     const mDisplay = m > 0 ? `${m}m ` : '';
     const sDisplay = `${s}s`;
-    
+
     return dDisplay + hDisplay + mDisplay + sDisplay;
   };
 
@@ -149,7 +134,7 @@ function App() {
   };
 
   // Filter logs based on search input
-  const filteredLogs = logs.filter(line => 
+  const filteredLogs = logs.filter(line =>
     line.toLowerCase().includes(logFilter.toLowerCase())
   );
 
@@ -179,7 +164,7 @@ function App() {
             <span className="header-subtitle">DevOps Control Center</span>
           </div>
         </div>
-        
+
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <div className="header-status">
             <span className={`status-dot ${apiStatus === 'active' ? 'active' : 'inactive'}`}></span>
@@ -201,7 +186,7 @@ function App() {
 
       {/* Main Grid */}
       <main className="dashboard-grid">
-        
+
         {/* Row 1: System Metrics Card */}
         <section className="glass-card col-8">
           <h2 className="card-title">
@@ -214,24 +199,24 @@ function App() {
             </svg>
             System Telemetry (Host)
           </h2>
-          
+
           <div className="metrics-row">
-            <CircularGauge 
-              percent={metrics?.cpu?.percent ?? 0} 
-              label="CPU Load" 
-              color="var(--accent-cyan)" 
+            <CircularGauge
+              percent={metrics?.cpu?.percent ?? 0}
+              label="CPU Load"
+              color="var(--accent-cyan)"
               subtext={`${metrics?.cpu?.count ?? 0} Cores`}
             />
-            <CircularGauge 
-              percent={metrics?.memory?.percent ?? 0} 
-              label="RAM Utilization" 
-              color="var(--accent-purple)" 
+            <CircularGauge
+              percent={metrics?.memory?.percent ?? 0}
+              label="RAM Utilization"
+              color="var(--accent-purple)"
               subtext={`${metrics?.memory?.used_gb ?? 0} / ${metrics?.memory?.total_gb ?? 0} GB`}
             />
-            <CircularGauge 
-              percent={metrics?.disk?.percent ?? 0} 
-              label="Storage Allocation" 
-              color="var(--accent-success)" 
+            <CircularGauge
+              percent={metrics?.disk?.percent ?? 0}
+              label="Storage Allocation"
+              color="var(--accent-success)"
               subtext={`${metrics?.disk?.used_gb ?? 0} / ${metrics?.disk?.total_gb ?? 0} GB`}
             />
           </div>
@@ -312,8 +297,8 @@ function App() {
                 ) : (
                   <tr>
                     <td colSpan="6" style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem 0' }}>
-                      {docker?.docker_daemon === 'disconnected' 
-                        ? 'Docker connection disabled. Verify EC2 socket configuration.' 
+                      {docker?.docker_daemon === 'disconnected'
+                        ? 'Docker connection disabled. Verify EC2 socket configuration.'
                         : 'No Docker containers found on system.'}
                     </td>
                   </tr>
@@ -379,10 +364,10 @@ function App() {
               </svg>
               Live Diagnostics Console
             </span>
-            <input 
-              type="text" 
-              placeholder="Search / filter logs..." 
-              value={logFilter} 
+            <input
+              type="text"
+              placeholder="Search / filter logs..."
+              value={logFilter}
               onChange={(e) => setLogFilter(e.target.value)}
               style={{
                 background: 'rgba(255,255,255,0.03)',
@@ -397,7 +382,7 @@ function App() {
               }}
             />
           </h2>
-          
+
           <div className="terminal">
             <div className="terminal-header">
               <div className="terminal-dots">
@@ -424,9 +409,8 @@ function App() {
           </div>
         </section>
 
-      </main>
+     </main>
     </div>
   );
 }
-
 export default App;
