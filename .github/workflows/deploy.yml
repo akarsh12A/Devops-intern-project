@@ -31,7 +31,7 @@ jobs:
             echo "Successfully connected to EC2 instance. Starting deployment..."
             
             # Go to deployment directory
-            cd /home/ubuntu/devops-dashboard
+            cd /home/ubuntu/intern
             
             # Check if Git repository is already initialized on host
             if [ -d ".git" ]; then
@@ -61,7 +61,7 @@ jobs:
             DEPLOY_EOF
             
             # Ensure proper folder ownership
-            chown -R ubuntu:ubuntu /home/ubuntu/devops-dashboard
+            chown -R ubuntu:ubuntu /home/ubuntu/intern
             
             # 3. Restart Docker containers
             echo "Stopping old containers..."
