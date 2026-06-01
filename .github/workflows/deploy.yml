@@ -14,7 +14,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
+      - name: Generate deployment metadata
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B | tr -d '\n\r\"' | cut -c1-60)
+          echo "Writing deployment metadata..."
+          cat <<DEPLOY_EOF > backend/deployment.json
+          {
+            "status": "active",
+            "environment": "production",
+            "last_deployment": "$(date -u +'%Y-%m-%d %H:%M:%S UTC')",
+            "commit_hash": "${{ github.sha }}",
+            "commit_message": "$COMMIT_MSG",
+            "branch": "${{ github.ref_name }}",
+            "author": "${{ github.actor }}"
+          }
+          DEPLOY_EOF
+
+      - name: Deploy via SSH and Rsync
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOST: ${{ secrets.EC2_HOST }}
@@ -25,7 +41,21 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           
-          # 2. SSH into instance and execute deployment script
+          # 2. Ensure the remote directory exists
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $USER@$HOST "mkdir -p /home/ubuntu/intern"
+          
+          # 3. Rsync files to EC2 instance (excluding logs, node_modules, .terraform, and git/github metadata)
+          echo "Syncing code files to EC2..."
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'logs/' \
+            --exclude 'node_modules/' \
+            --exclude '.terraform/' \
+            --exclude '*.tfstate*' \
+            ./ $USER@$HOST:/home/ubuntu/intern/
+          
+          # 4. SSH into instance and execute container rebuilds
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $USER@$HOST << 'EOF'
             set -e
             echo "Successfully connected to EC2 instance. Starting deployment..."
@@ -33,37 +63,10 @@ jobs:
             # Go to deployment directory
             cd /home/ubuntu/intern
             
-            # Check if Git repository is already initialized on host
-            if [ -d ".git" ]; then
-              echo "Pulling latest code changes..."
-              git fetch --all
-              git reset --hard origin/main
-            else
-              echo "Cloning repository for the first time..."
-              # Fallback standard clone. 
-              # NOTE: Since the repository is public or deployed via deploy keys, standard clone is used.
-              # Alternatively, if SSH checkout on host is needed, this clone command can be adjusted.
-              git clone https://github.com/${{ github.repository }}.git .
-            fi
-            
-            # Generate deployment.json dynamically containing build/deploy metadata
-            echo "Writing deployment metadata..."
-            cat <<DEPLOY_EOF > backend/deployment.json
-            {
-              "status": "active",
-              "environment": "production",
-              "last_deployment": "$(date -u +'%Y-%m-%d %H:%M:%S UTC')",
-              "commit_hash": "${{ github.sha }}",
-              "commit_message": "$(git log -1 --pretty=%B | tr -d '\n\r\"' | cut -c1-60)",
-              "branch": "${{ github.ref_name }}",
-              "author": "${{ github.actor }}"
-            }
-            DEPLOY_EOF
-            
             # Ensure proper folder ownership
             chown -R ubuntu:ubuntu /home/ubuntu/intern
             
-            # 3. Restart Docker containers
+            # Restart Docker containers
             echo "Stopping old containers..."
             docker compose down --remove-orphans || true
             

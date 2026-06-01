@@ -65,12 +65,12 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-scroll terminal to bottom when new logs load
-  useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [logs]);
+  // Auto-scroll terminal disabled to prevent main page scrolling down automatically
+  // useEffect(() => {
+  //   if (terminalEndRef.current) {
+  //     terminalEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }, [logs]);
 
   // Helper for uptime formatting
   const formatUptime = (seconds) => {

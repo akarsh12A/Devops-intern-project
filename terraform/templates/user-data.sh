@@ -31,9 +31,9 @@ systemctl enable docker
 usermod -aG docker ubuntu
 
 # Setup deployment directories
-mkdir -p /home/ubuntu/devops-dashboard/logs
-touch /home/ubuntu/devops-dashboard/logs/backend.log
-chown -R ubuntu:ubuntu /home/ubuntu/devops-dashboard
+mkdir -p /home/ubuntu/intern/logs
+touch /home/ubuntu/intern/logs/backend.log
+chown -R ubuntu:ubuntu /home/ubuntu/intern
 
 # Install AWS CloudWatch Agent
 echo "Downloading and installing CloudWatch Agent..."
@@ -47,7 +47,7 @@ cat <<'EOF' > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
 {
   "agent": {
     "metrics_collection_interval": 60,
-    "run_as_user": "cwagent"
+    "run_as_user": "root"
   },
   "metrics": {
     "metrics_collected": {
@@ -91,7 +91,7 @@ cat <<'EOF' > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
             "retention_in_days": 7
           },
           {
-            "file_path": "/home/ubuntu/devops-dashboard/logs/backend.log",
+            "file_path": "/home/ubuntu/intern/logs/backend.log",
             "log_group_name": "DevOps-Dashboard-Backend-Logs",
             "log_stream_name": "{hostname}-backend-logs",
             "retention_in_days": 7
